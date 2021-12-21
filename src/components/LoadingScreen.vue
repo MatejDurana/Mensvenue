@@ -19,5 +19,6 @@ export default {};
   position: absolute;
   top: 50%;
   transform: translate(-50%);
+  height: 5rem;
 }
 </style>
