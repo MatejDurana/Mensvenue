@@ -1,0 +1,14 @@
+<template>
+    <div id="nav">
+        <router-link to="/">Home</router-link>
+        <router-link to="/about" class="hidden-md-and-down">About</router-link>
+      </div>
+</template>
+<script>
+export default {
+    
+}
+</script>
+<style scoped lang="scss">
+    
+</style>
