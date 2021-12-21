@@ -1,16 +1,10 @@
 <template>
-    <div id="loading">
-    <img
-      class="img"
-      src="../assets/svg/Logo.svg"
-      alt="Loading..."
-    />
+  <div id="loading">
+    <img class="img" src="../assets/svg/Logo.svg" alt="Loading..." />
   </div>
 </template>
 <script>
-export default {
-    
-}
+export default {};
 </script>
 <style scoped lang="scss">
 #loading {
@@ -22,8 +16,8 @@ export default {
   line-height: 100%;
 }
 .img {
-  position:absolute;
-  top: 50%;  
+  position: absolute;
+  top: 50%;
   transform: translate(-50%);
 }
 </style>

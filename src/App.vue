@@ -11,7 +11,6 @@
 <script>
 import LoadingScreen from "@/components/LoadingScreen.vue"; 
 import Header from "@/components/Header.vue"; 
-
 export default {
   components: {
       LoadingScreen,
@@ -38,5 +37,6 @@ export default {
 }
 .content {
   position: absolute;
+  width: 100%;
 }
 </style>
