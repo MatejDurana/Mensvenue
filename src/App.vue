@@ -1,12 +1,12 @@
 <template>
-  <div id="app">
+  <v-app>
     <div class="main_background"></div>
-    <LoadingScreen v-if="isLoading"></LoadingScreen>
-    <div v-if="!isLoading" class="content">
-      <Header></Header>
+    <LoadingScreen :isLoading="isLoading"></LoadingScreen>
+    <v-main v-if="isLoaded" class="content">
+      <Header :isLoaded="isLoaded"></Header>
       <router-view />
-    </div>
-  </div>
+    </v-main>
+  </v-app>
 </template>
 <script>
 import LoadingScreen from "@/components/LoadingScreen.vue"; 
@@ -18,12 +18,14 @@ export default {
   },
   data() {
       return {
-        isLoading: true
+        isLoading: true,
+        isLoaded: false,
       };  
   },
   mounted() {
     setTimeout(() => {
       this.isLoading = false;
+      this.isLoaded = true;
     }, 1500);
   }
 }
