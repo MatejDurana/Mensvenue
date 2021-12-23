@@ -19,11 +19,10 @@ export default {
   height: 100vh;
   width: 100vw;
   text-align: center;
-  line-height: 100%;
 }
 .img {
   position: absolute;
-  top: 5%;
+  top: 4rem;
   transform: translate(-50%);
   height: 1.7rem;
   &:not(.active){
@@ -32,7 +31,7 @@ export default {
   }
   &.active{
   animation-name: logo_animation;
-  animation-duration: 2s;
+  animation-duration: 1s;
   transform: translate(-50%);
   }
 }
@@ -42,7 +41,7 @@ export default {
     height: 5rem;
   }
   100% {
-    top: 5%;
+    top: 4rem;
     height: 1.7rem;
   }
 } 

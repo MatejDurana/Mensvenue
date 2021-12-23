@@ -2,36 +2,34 @@
   <v-app>
     <div class="main_background"></div>
     <LoadingScreen :isLoading="isLoading"></LoadingScreen>
-    <v-main v-if="isLoaded" class="content">
-      <Header :isLoaded="isLoaded"></Header>
+    <v-main v-if="!isLoading" class="content">
+      <Header></Header>
       <router-view />
     </v-main>
   </v-app>
 </template>
 <script>
-import LoadingScreen from "@/components/LoadingScreen.vue"; 
-import Header from "@/components/Header.vue"; 
+import LoadingScreen from "@/components/LoadingScreen.vue";
+import Header from "@/components/Header.vue";
 export default {
   components: {
-      LoadingScreen,
-      Header
+    LoadingScreen,
+    Header,
   },
   data() {
-      return {
-        isLoading: true,
-        isLoaded: false,
-      };  
+    return {
+      isLoading: true,
+    };
   },
   mounted() {
     setTimeout(() => {
       this.isLoading = false;
-      this.isLoaded = true;
     }, 1500);
-  }
-}
+  },
+};
 </script>
 <style lang="scss">
-.main_background {    
+.main_background {
   background: url("~@/assets/svg/main_background.svg");
   position: fixed;
   height: 100vh;
