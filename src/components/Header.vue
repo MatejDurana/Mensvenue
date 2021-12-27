@@ -4,15 +4,12 @@
       <!--<router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>-->
       <transition name="socialsT">
-        <div
-          v-if="this.isLoaded"
-          class="socials hidden-xs-only"
-        >
+        <div v-if="this.isLoaded" class="socials hidden-xs-only">
           <a href="http://" class="text-decoration-none"
             ><caption>
               FB
-            </caption></a
-          >
+            </caption>
+          </a>
           <a href="http://" class="text-decoration-none"
             ><caption>
               IG
@@ -24,11 +21,7 @@
       <div class="logo"></div>
 
       <transition name="menuT">
-        <div
-          v-if="this.isLoaded"
-          class="menu d-flex align-content-center"
-          style="transition-delay: .5s"
-        >
+        <div v-if="this.isLoaded" class="menu d-flex align-content-center">
           <caption class="text-uppercase hidden-sm-and-down">
             Menu
           </caption>
@@ -38,6 +31,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: "Header",
