@@ -4,8 +4,6 @@ import router from "./router";
 import "./assets/style/style.scss";
 import vuetify from "./plugins/vuetify";
 import VueMaterial from "vue-material";
-import "vue-material/dist/vue-material.min.css";
-import "vue-material/dist/theme/default.css";
 
 Vue.use(VueMaterial);
 Vue.config.productionTip = false;
