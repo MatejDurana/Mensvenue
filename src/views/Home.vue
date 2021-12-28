@@ -1,11 +1,16 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <Uvod />
+  </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import Uvod from "@/components/Home/Uvod.vue";
 export default {
   name: "Home",
+  components: {
+    Uvod,
+  },
   data() {
     return {
       show: true,
@@ -18,7 +23,6 @@ export default {
   margin: auto;
   width: 80%;
   height: 150vh;
-  //background-color: rgba($color: #ffffff, $alpha: 0.1);
   border: 1px solid #fff;
   opacity: 1;
   padding: 5rem;
