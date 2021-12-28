@@ -1,19 +1,21 @@
 <template>
   <v-app>
     <!-- <div class="main_background"></div> -->
+    <!-- <div id="particles-js"></div> -->
+    <ParticlesJS />
     <!-- <particles-bg
       type="custom"
       :canvas="canvas_options"
       :config="config"
       :bg="true"
     /> -->
-    <particles-bg
+    <!-- <particles-bg
       type="cobweb"
       color="#2B2B2B"
       num="300"
       :canvas="canvas_options"
       :bg="true"
-    />
+    /> -->
     <LoadingScreen :isLoading="isLoading"></LoadingScreen>
     <v-main v-if="!isLoading" class="content">
       <Header></Header>
@@ -21,15 +23,19 @@
     </v-main>
   </v-app>
 </template>
+
 <script>
 import LoadingScreen from "@/components/LoadingScreen.vue";
 import Header from "@/components/Header.vue";
-import { ParticlesBg } from "particles-bg-vue";
+/* import { ParticlesBg } from "particles-bg-vue"; */
+import ParticlesJS from "@/components/ParticlesJS.vue";
+
 export default {
   components: {
     LoadingScreen,
     Header,
-    ParticlesBg,
+    ParticlesJS,
+    /*   ParticlesBg, */
   },
   data() {
     return {
