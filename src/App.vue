@@ -7,7 +7,12 @@
       <router-view />
 
       <!-- <lottie :options="defaultOptions" :height="65" :width="65" /> -->
-      <lottie :options="defaultOptions" :height="400" :width="400" v-on:animCreated="handleAnimation"/>
+      <lottie
+        :options="defaultOptions"
+        :height="400"
+        :width="400"
+        v-on:animCreated="handleAnimation"
+      />
       <div>
         <p>Speed: x{{ animationSpeed }}</p>
         <input
@@ -51,7 +56,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.isLoading = false;
-    }, 1500);
+    }, 150);
   },
   methods: {
     handleAnimation: function (anim) {

@@ -36,31 +36,39 @@
             v-if="this.isLoaded"
             class="menu hidden-xs-only align-center"
           >
-            <caption class="text-uppercase hidden-sm-and-down">
-              Menu
+            <caption
+              class="text-uppercase hidden-sm-and-down noselect"
+              @click="toggleMenu()"
+            >
+              {{
+                this.menuText
+              }}
             </caption>
-            <img src="../assets/svg/Hamburger.svg" @click="toggleMenu()" />
+            <Hamburger :isOpened="isOpened" @click.native="toggleMenu()" />
+            <Menu :isOpened="isOpened" />
           </v-layout>
         </transition>
       </v-toolbar-items>
     </v-toolbar>
     <!--<router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>-->
-    <Menu :isOpened="isOpened" />
   </nav>
 </template>
 
 <script>
 import Menu from "@/components/Header/Menu.vue";
+import Hamburger from "@/components/Header/Hamburger.vue";
 export default {
   name: "Header",
   components: {
     Menu,
+    Hamburger,
   },
   data() {
     return {
       isLoaded: false,
       isOpened: false,
+      menuText: "Menu",
     };
   },
   mounted() {
@@ -69,6 +77,7 @@ export default {
   methods: {
     toggleMenu() {
       this.isOpened = !this.isOpened;
+      this.isOpened ? (this.menuText = "Zavrieť") : (this.menuText = "Menu");
     },
   },
 };
@@ -104,10 +113,16 @@ nav {
   }
   .menu {
     caption {
+      outline: none;
+      z-index: 10;
+      cursor: pointer;
       font-size: 1rem;
       margin-right: 3rem;
     }
     img {
+      outline: none;
+      cursor: pointer;
+      z-index: 10;
       max-width: 3rem;
     }
   }
