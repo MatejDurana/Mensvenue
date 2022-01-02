@@ -82,12 +82,6 @@ export default {
 };
 </script>
 <style lang="scss">
-.main_background {
-  background: url("~@/assets/svg/main_background.svg");
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-}
 .content {
   position: absolute;
   width: 100%;

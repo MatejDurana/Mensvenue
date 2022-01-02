@@ -36,7 +36,7 @@ export default {
   position: absolute;
   height: 1.5px;
   width: 100%;
-  background: #fafafa;
+  background: white;
   border-radius: 9px;
   opacity: 1;
   left: 0;

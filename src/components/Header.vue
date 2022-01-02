@@ -37,15 +37,26 @@
             class="menu hidden-xs-only align-center"
           >
             <caption
-              class="text-uppercase hidden-sm-and-down noselect"
+              :class="[
+                'text-uppercase hidden-sm-and-down noselect',
+                this.isAnimating ? 'disabled' : '',
+              ]"
               @click="toggleMenu()"
             >
               {{
                 this.menuText
               }}
             </caption>
-            <Hamburger :isOpened="isOpened" @click.native="toggleMenu()" />
-            <Menu :isOpened="isOpened" />
+            <Hamburger
+              :isOpened="isOpened"
+              @click.native="toggleMenu()"
+              :class="[this.isAnimating ? 'disabled' : '']"
+            />
+            <Menu
+              :isOpened="isOpened"
+              :isAnimating="isAnimating"
+              @animating="animatingFunc"
+            />
           </v-layout>
         </transition>
       </v-toolbar-items>
@@ -66,6 +77,7 @@ export default {
   },
   data() {
     return {
+      isAnimating: false,
       isLoaded: false,
       isOpened: false,
       menuText: "Menu",
@@ -78,6 +90,10 @@ export default {
     toggleMenu() {
       this.isOpened = !this.isOpened;
       this.isOpened ? (this.menuText = "Zavrieť") : (this.menuText = "Menu");
+      document.body.classList.toggle("stop-scrolling");
+    },
+    animatingFunc(value) {
+      this.isAnimating = value;
     },
   },
 };

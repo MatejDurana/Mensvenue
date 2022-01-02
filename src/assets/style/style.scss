@@ -58,3 +58,10 @@ $mainColor: black;
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+.disabled {
+  pointer-events: none;
+}
