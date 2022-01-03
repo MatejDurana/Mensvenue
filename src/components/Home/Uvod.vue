@@ -18,4 +18,18 @@ export default {};
     letter-spacing: 0.33rem;
   }
 }
+@media only screen and (max-width: 960px) {
+  .uvod {
+    h1 {
+      font-size: 5.625rem;
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .uvod {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+}
 </style>

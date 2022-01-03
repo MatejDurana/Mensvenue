@@ -1,15 +1,17 @@
 <template>
   <div id="loading">
-      <img src="../assets/svg/Logo.svg"
+    <img
+      src="../assets/svg/Logo.svg"
       :class="[isLoading ? '' : 'active', 'img']"
-      alt="Loading..." />
+      alt="Loading..."
+    />
   </div>
 </template>
 <script>
 export default {
   props: {
     isLoading: Boolean,
-  }
+  },
 };
 </script>
 <style scoped lang="scss">
@@ -25,14 +27,14 @@ export default {
   top: 4rem;
   transform: translate(-50%);
   height: 1.7rem;
-  &:not(.active){
+  &:not(.active) {
     top: 50%;
     height: 5rem;
   }
-  &.active{
-  animation-name: logo_animation;
-  animation-duration: 1s;
-  transform: translate(-50%);
+  &.active {
+    animation-name: logo_animation;
+    animation-duration: 1s;
+    transform: translate(-50%);
   }
 }
 @keyframes logo_animation {
@@ -44,5 +46,29 @@ export default {
     top: 4rem;
     height: 1.7rem;
   }
-} 
+}
+
+@media only screen and (max-width: 600px) {
+  .img {
+    top: 2rem;
+    left: 30%;
+    width: 16.25rem;
+    &:not(.active) {
+      top: 20%;
+    }
+    &.active {
+      animation-name: logo_animation_mobil;
+      animation-duration: 1s;
+      transform: translate(-30%);
+    }
+  }
+}
+@keyframes logo_animation_mobil {
+  0% {
+    top: 20%;
+  }
+  100% {
+    top: 2rem;
+  }
+}
 </style>

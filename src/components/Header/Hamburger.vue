@@ -90,4 +90,36 @@ export default {
   width: 0%;
   left: 50%;
 }
+
+@media only screen and (max-width: 600px) {
+  .hamburger {
+    width: 1.875rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    & > span {
+      height: 0.5px !important;
+    }
+  }
+  .hamburger span:nth-child(2),
+  .hamburger span:nth-child(3) {
+    top: 10px;
+  }
+
+  .hamburger span:nth-child(4) {
+    top: 20px;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+  }
+
+  .hamburger.open span:nth-child(4) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+  }
+}
 </style>

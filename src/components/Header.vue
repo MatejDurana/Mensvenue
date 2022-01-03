@@ -31,11 +31,7 @@
 
       <v-toolbar-items>
         <transition name="menuT">
-          <v-layout
-            row
-            v-if="this.isLoaded"
-            class="menu hidden-xs-only align-center"
-          >
+          <v-layout row v-if="this.isLoaded" class="menu align-center">
             <caption
               :class="[
                 'text-uppercase hidden-sm-and-down noselect',
@@ -100,17 +96,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.menuT-enter {
-  transform: translateX(40rem);
+@media only screen and (max-width: 600px) {
+  .myToolbar {
+    margin: 0 1.25rem !important;
+    margin-top: 2rem !important;
+    .menu {
+      top: 0.7rem;
+    }
+  }
 }
-.socialsT-enter {
-  transform: translateX(-40rem);
-}
-.menuT-enter-active,
-.socialsT-enter-active {
-  transition: transform 1s ease-in-out;
-}
-
 $header-height: 1.7rem;
 nav {
   background-color: transparent;
@@ -128,6 +122,7 @@ nav {
     }
   }
   .menu {
+    position: relative;
     caption {
       outline: none;
       z-index: 10;
@@ -135,12 +130,20 @@ nav {
       font-size: 1rem;
       margin-right: 3rem;
     }
-    img {
-      outline: none;
-      cursor: pointer;
-      z-index: 10;
-      max-width: 3rem;
-    }
   }
+}
+
+.menuT-enter {
+  transform: translateX(40rem);
+  @media only screen and (max-width: 600px) {
+    transform: translateX(10rem);
+  }
+}
+.socialsT-enter {
+  transform: translateX(-40rem);
+}
+.menuT-enter-active,
+.socialsT-enter-active {
+  transition: all 1s ease-in-out;
 }
 </style>

@@ -20,12 +20,6 @@ export default {
 </script>
 <style scoped lang="scss">
 .home {
-  margin: auto;
-  width: 80%;
-  height: 150vh;
-  border: 1px solid #fff;
-  opacity: 1;
-  padding: 5rem;
-  margin-top: 5rem;
+  height: 200vh;
 }
 </style>
